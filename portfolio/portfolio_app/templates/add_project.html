@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add a New Project</title>
+</head>
+<body>
+    <h1>Add a New Project for {{ programmer.user.username }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+    <a href="{% url 'programmer_detail' programmer.id %}">Back to Programmer Detail</a>
+</body>
+</html>
